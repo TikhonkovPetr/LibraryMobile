@@ -1,7 +1,7 @@
 package intarface
 
 interface FullInfoInterface {
-    fun getFullInfo()
+    fun getFullInfo(): String
 }
 interface TakeToHome {
     fun takeToHome()

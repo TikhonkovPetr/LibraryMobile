@@ -3,18 +3,14 @@ package Recycler.util
 import androidx.recyclerview.widget.DiffUtil
 import classes.ObjectLibrary
 
-class ObjectDifUtill(private val oldList:List<ObjectLibrary>,private val newList:List<ObjectLibrary>)
-    : DiffUtil.Callback() {
-    override fun getOldListSize() = oldList.size
+class ObjectDifUtill: DiffUtil.ItemCallback<ObjectLibrary>() {
 
-    override fun getNewListSize() = newList.size
-
-    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition].id == newList[newItemPosition].id
+    override fun areItemsTheSame(oldItem: ObjectLibrary, newItem: ObjectLibrary): Boolean {
+        return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition] == newList[newItemPosition]
+    override fun areContentsTheSame(oldItem: ObjectLibrary, newItem: ObjectLibrary): Boolean {
+        return (oldItem.id == newItem.id && oldItem.name == newItem.name && oldItem.available == newItem.available)
     }
 
 }

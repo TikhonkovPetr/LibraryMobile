@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addObject"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AddedActivity">
+
+    <TextView
+        android:id="@+id/zagol"
+        android:text="Добавление элемента"
+        android:textSize="32sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <Button
+        android:id="@+id/buttonAddObject"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textSize="22sp"
+        android:text="Добавить"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        tools:text = "название"
+        android:id="@+id/nameObject"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toBottomOf="@id/zagol"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Название:"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintTop_toTopOf="@id/nameObject"
+        app:layout_constraintEnd_toStartOf="@id/nameObject" />
+
+    <RadioGroup
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@id/textView" >
+        <RadioButton
+            android:id="@+id/radioButtonBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Книга" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNewspaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Газета" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDisk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Диск" />
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
