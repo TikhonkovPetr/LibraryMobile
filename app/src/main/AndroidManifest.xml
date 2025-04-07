@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddedActivity"/>
+        <activity android:name=".RedactBookActivity"/>
+        <activity android:name=".RedactNewspaperActivity"/>
+        <activity android:name=".RedactDiskActivity"/>
     </application>
 
 </manifest>

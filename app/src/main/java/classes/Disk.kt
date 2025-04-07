@@ -1,11 +1,11 @@
 package classes
 import intarface.TakeToHome
 
-class Disk(id: Int, name: String, available: Boolean, private val typeDiscID: Int) : ObjectLibrary(id, name, available),
+class Disk(id: Int, name: String, available: Boolean, val typeDiscID: Int) : ObjectLibrary(id, name, available),
     TakeToHome {
     private val typeDisc: Map<Int, String> = mapOf(0 to "DVD", 1 to "CD")
-    override fun getFullInfo() {
-        println("${this.typeDisc[typeDiscID]} ${this.name} доступен: ${yesOrNot(available)}")
+    override fun getFullInfo(): String {
+        return "Описание диска: ${this.typeDisc[typeDiscID]} ${this.name} доступен: ${yesOrNot(available)}"
     }
 
     override fun takeToHome() {

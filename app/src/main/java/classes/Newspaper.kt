@@ -1,10 +1,10 @@
 package classes
 import intarface.ReadingInLibrary
 
-class Newspaper(id: Int, name: String, available: Boolean, private val issueNumber: Int, private val monthCreate: String) :
+class Newspaper(id: Int, name: String, available: Boolean, val issueNumber: Int, val monthCreate: String) :
     ObjectLibrary(id, name, available), ReadingInLibrary {
-    override fun getFullInfo() {
-        println("выпуск: ${this.issueNumber} месяца ${this.monthCreate} газеты ${this.name} с id: ${this.id} доступен: ${yesOrNot(available)}")
+    override fun getFullInfo(): String {
+        return "Описание газеты: выпуск: ${this.issueNumber} месяца ${this.monthCreate} газеты ${this.name} с id: ${this.id} доступен: ${yesOrNot(available)}"
     }
 
     override fun readingInLibrary() {

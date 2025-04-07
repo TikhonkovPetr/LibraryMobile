@@ -2,12 +2,10 @@ package classes
 import intarface.ReadingInLibrary
 import intarface.TakeToHome
 
-open class Book(id: Int, name: String, available: Boolean, private val countPages: Int, private val autor: String) :
+open class Book(id: Int, name: String, available: Boolean, val countPages: Int, val autor: String) :
     ObjectLibrary(id, name, available), ReadingInLibrary, TakeToHome {
-    override fun getFullInfo() {
-        println(
-            "книга: ${this.name} (${this.countPages} стр.) автора: ${this.autor} с id: ${this.id} доступна:${yesOrNot(available)}"
-        )
+    override fun getFullInfo(): String{
+        return "Описание книги: ${this.name} (${this.countPages} стр.) автора: ${this.autor} с id: ${this.id} доступна:${yesOrNot(available)}"
     }
 
     override fun readingInLibrary() {
